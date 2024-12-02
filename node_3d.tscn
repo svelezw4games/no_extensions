@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b672ow633ut1b"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_87sld"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y25id"]
+
+[sub_resource type="Sky" id="Sky_10b3t"]
+sky_material = SubResource("ProceduralSkyMaterial_y25id")
+
+[sub_resource type="Environment" id="Environment_qlkfa"]
+background_mode = 2
+sky = SubResource("Sky_10b3t")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_87sld")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5567, 0, 0)
+mesh = SubResource("SphereMesh_87sld")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.17545)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qlkfa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.821229, 0.570599, 0, -0.570599, 0.821229, 0, 1.62636, 5.04487)
+light_color = Color(0.205329, 0.674093, 0.841101, 1)
